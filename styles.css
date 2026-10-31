@@ -1,0 +1,157 @@
+/* === Reset básico === */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+/* === Contenedor === */
+.contenedor {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* === Formulario === */
+.formulario {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+}
+
+/* === Fieldset y legend === */
+fieldset {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 0 0 1.5rem;
+}
+
+legend {
+  font-weight: 600;
+  color: #2563eb;
+  padding: 0 .5rem;
+}
+
+/* === Campos === */
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  font-weight: 500;
+  margin-bottom: .35rem;
+  font-size: .95rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: .65rem .8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font: inherit;
+  background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,.2);
+}
+
+/* === Validación visual === */
+input:not(:placeholder-shown):valid {
+  border-color: #16a34a;
+}
+
+input:not(:placeholder-shown):invalid {
+  border-color: #dc2626;
+}
+
+/* === Mensajes de ayuda === */
+small {
+  color: #6b7280;
+  font-size: .8rem;
+  margin-top: .25rem;
+}
+
+/* === Radios y checkbox === */
+.campo-radio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1.25rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.campo-radio > span {
+  font-weight: 500;
+  width: 100%;
+}
+
+.campo-radio label,
+.campo-check label {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.campo-check {
+  margin-bottom: .75rem;
+}
+
+/* === Botones === */
+.acciones {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: .7rem 1.4rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background .2s, transform .1s;
+}
+
+.btn-primario {
+  background: #2563eb;
+  color: #fff;
+}
+
+.btn-primario:hover { background: #1d4ed8; }
+.btn-primario:active { transform: scale(.98); }
+
+.btn-secundario {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+.btn-secundario:hover { background: #d1d5db; }
+
+/* === Responsive === */
+@media (max-width: 480px) {
+  .formulario { padding: 1.25rem; }
+  .acciones { justify-content: stretch; }
+  .acciones button { flex: 1; }
+}
